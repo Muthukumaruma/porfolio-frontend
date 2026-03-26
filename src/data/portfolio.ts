@@ -1,0 +1,275 @@
+export const profile = {
+  name: 'Muthukumar U',
+  firstName: 'Muthukumar',
+  roles: [
+    'Solution Architect',
+    'Full Stack Developer',
+    'Technical Leader',
+    'MERN Stack Expert',
+  ],
+  title: 'Lead Software Technologist & Solution Architect',
+  bio: 'Technology Leader and Solution Architect with nearly 15 years of experience owning end-to-end architecture and delivery of large-scale, product-centric platforms, building scalable, secure, and high-performance enterprise systems from concept to production.',
+  email: 'muthukumar.mscit@gmail.com',
+  phone: '+91-8072523915',
+  linkedin: 'https://www.linkedin.com/in/muthukumaru',
+  address: 'Madurai, Tamil Nadu, India',
+  dob: '30th July 1988',
+  languages: ['English', 'Tamil', 'Kannada'],
+  experience: '15+',
+  summary: [
+    'Technology Leader and Solution Architect with nearly 15 years of experience owning end-to-end architecture and delivery of large-scale, product-centric platforms, building scalable, secure, and high-performance enterprise systems from concept to production.',
+    'Strategic owner of end-to-end solution architecture and delivery, driving complex web and mobile ecosystems encompassing portals, mobile applications, kiosks, and third-party integrations, while ensuring scalability, security, and long-term maintainability.',
+    'Expert in modern JavaScript ecosystems (React.js, Node.js, Next.js, React Native) with a proven skill to design modular, Microservices-based architectures that reduce deployment cycles and improve system responsiveness.',
+    'Proven engineering leader and mentor, skilled at building high-performing teams through strong governance, code quality standards, sprint leadership, and continuous improvement practices aligned with Agile and DevOps principles.',
+    'Showcased record of driving measurable business impact, including up to 90% performance improvements, 80% user engagement growth, and 95% operational efficiency gains through thoughtful system design, optimization, and feature innovation.',
+    'Deep expertise in enterprise integrations and API strategy, enabling seamless interoperability with WMS, voice bots, analytics platforms, and operational monitoring systems to support real-time, data-driven decision-making.',
+    'Demonstrated expertise in delivering End-to-End (E2E) MERN stack solutions (MongoDB, Express.js, React.js, Node.js) by architecting and building applications from scratch — ensuring scalable, secure, and high-performing product ecosystems.',
+    'Hands-on experience integrating AI and LLM modules — including OpenAI (GPT) and Google Gemini APIs — to build intelligent, conversational, and automation-driven features within enterprise-grade applications.',
+  ],
+  coreCompetencies: [
+    'Full Stack Architecture & Engineering',
+    'Enterprise Application Design & Scalability',
+    'React.js / Node.js / Next.js Ecosystem Leadership',
+    'Cloud-Native Development',
+    'Agile Delivery & Engineering Governance',
+    'Performance Engineering & Optimization',
+    'API Strategy, Integration & Orchestration',
+    'System Reliability, Availability & Monitoring',
+    'DevOps, CI/CD & Automation Pipelines',
+  ],
+  domains: [
+    { label: 'OTT / Media Streaming', icon: '🎬' },
+    { label: 'OTA / Online Travel', icon: '✈️' },
+    { label: 'Warehouse Management', icon: '🏭' },
+    { label: 'Delivery Management', icon: '🚚' },
+    { label: 'eCommerce', icon: '🛒' },
+    { label: 'Enterprise Logistics', icon: '📦' },
+    { label: 'AI / LLM Integration', icon: '🤖' },
+  ],
+  softSkills: [
+    'Strategic Communication',
+    'Analytical',
+    'Critical Thinking',
+    'Detail Oriented',
+    'Problem Solving',
+    'Leadership & Mentorship',
+  ],
+  education: [
+    {
+      degree: 'M.Sc. Computer Science & IT',
+      year: '2011',
+      institution: 'Arulmigu Palani Andavar College',
+    },
+    {
+      degree: 'B.Sc. Information Technology',
+      year: '2008',
+      institution: 'Arumugam Pillai Seethai Ammal College',
+    },
+  ],
+}
+
+export const skills = [
+  { name: 'React.js', category: 'Frontend', level: 95 },
+  { name: 'Next.js', category: 'Frontend', level: 90 },
+  { name: 'React Native', category: 'Frontend', level: 80 },
+  { name: 'JavaScript (ES6+)', category: 'Frontend', level: 95 },
+  { name: 'TypeScript', category: 'Frontend', level: 85 },
+  { name: 'HTML5 / CSS3', category: 'Frontend', level: 95 },
+  { name: 'Node.js', category: 'Backend', level: 90 },
+  { name: 'Express.js', category: 'Backend', level: 90 },
+  { name: 'RESTful APIs', category: 'Backend', level: 95 },
+  { name: 'Python', category: 'Backend', level: 70 },
+  { name: 'MongoDB', category: 'Database', level: 90 },
+  { name: 'MySQL', category: 'Database', level: 70 },
+  { name: 'AWS', category: 'Cloud & DevOps', level: 75 },
+  { name: 'Azure', category: 'Cloud & DevOps', level: 70 },
+  { name: 'Git', category: 'Cloud & DevOps', level: 90 },
+  { name: 'CI/CD Pipelines', category: 'Cloud & DevOps', level: 80 },
+  { name: 'AI Prompt Engineering', category: 'AI / LLM', level: 80 },
+  { name: 'AI & LLM Engineering', category: 'AI / LLM', level: 75 },
+  { name: 'OpenAI (GPT)', category: 'AI / LLM', level: 80 },
+  { name: 'Google Gemini', category: 'AI / LLM', level: 75 },
+]
+
+export const experiences = [
+  {
+    company: 'CES IT PVT LTD',
+    role: 'Lead Software Technologist / Architect',
+    startDate: 'April 2025',
+    endDate: 'January 2026',
+    location: 'Chennai, India',
+    description: [
+      'Delivered End-to-End MERN stack solutions by architecting and building enterprise logistics platforms from scratch.',
+      'Managed architecture of enterprise-grade Warehouse Management platforms: CSO Portal, Driver Mobile App, and Kiosk Systems for Niagara Bottling, LLC.',
+      'Led solution design and full-stack development ensuring high availability, scalability, and performance.',
+      'Drove Agile delivery and engineering governance — sprint planning, code reviews, and release cycles.',
+      'Integrated complex third-party ecosystems including Niagara Eye, Voice Bot, and Manhattan WMS.',
+      'Mentored engineering teams, fostering a culture of technical excellence and continuous improvement.',
+      'Worked with AI and LLM modules — integrated OpenAI (GPT) and Google Gemini APIs to enable intelligent automation and conversational features within enterprise platforms.',
+    ],
+  },
+  {
+    company: 'Airline Pros',
+    role: 'Lead Software Engineer / Architect',
+    startDate: 'February 2022',
+    endDate: 'December 2024',
+    location: 'Kochi, India',
+    description: [
+      'Engineered and deployed full-scale E2E MERN stack OTA (Online Travel Agent) platform from the ground up, owning complete lifecycle from architecture to production.',
+      'Built and delivered enterprise-grade travel booking and management applications, enabling seamless flight, hotel, and itinerary operations for travel agents.',
+      'Owned complete SDLC: requirements analysis, solution design, development, testing, deployment, and post-production support.',
+      'Drove adoption of Microservices-based architecture, improving scalability, fault tolerance, and deployment efficiency.',
+      'Provided strong technical leadership, mentoring developers and establishing code quality standards.',
+      'Acted as technical decision-maker resolving complex engineering challenges.',
+    ],
+  },
+  {
+    company: 'Photon Infotech',
+    role: 'Technical Lead / Architect',
+    startDate: 'July 2020',
+    endDate: 'February 2022',
+    location: 'Chennai, India',
+    description: [
+      'Built scalable MERN stack web applications with modular frontend components and RESTful backend services.',
+      'Redesigned and modernized large-scale eCommerce platforms with improved UI, usability, and customer engagement.',
+      'Engineered high-performance web solutions ensuring responsive design, cross-browser compatibility, and optimized load times.',
+      'Played a key role in cloud migration initiatives to improve availability, scalability, and cost efficiency.',
+      'Partnered with business stakeholders to translate requirements into technical solutions aligned with commercial goals.',
+    ],
+  },
+  {
+    company: 'The Viral Fever',
+    role: 'Senior Software Engineer / Architect',
+    startDate: 'December 2016',
+    endDate: 'July 2020',
+    location: 'Chennai, India',
+    description: [
+      'Led architecture and development of scalable OTT streaming platform supporting high user traffic.',
+      'Built and optimized React.js frontend applications for seamless video playback and user experience.',
+      'Designed Node.js + Express.js backend services for content delivery, user management, and analytics.',
+      'Implemented microservices architecture for scalable video streaming and content distribution.',
+      'Integrated HLS/DASH video streaming technologies and CDN services for efficient media delivery.',
+      'Developed secure JWT-based authentication and subscription-based access control systems.',
+    ],
+  },
+  {
+    company: 'L&T Technology Services',
+    role: 'Senior Software Engineer',
+    startDate: 'May 2015',
+    endDate: 'December 2016',
+    location: 'Mysore, India',
+    description: [
+      'Developed enterprise-grade web applications using JavaScript, React, and Node.js.',
+      'Designed RESTful APIs ensuring high performance and responsiveness.',
+      'Worked on responsive UI development with HTML5, CSS3, and modern JS frameworks.',
+      'Collaborated with stakeholders to gather requirements and translate into technical solutions.',
+    ],
+  },
+  {
+    company: 'DispatchTrack',
+    role: 'Web Developer',
+    startDate: 'May 2013',
+    endDate: 'May 2015',
+    location: 'Mysore, India',
+    description: [
+      'Developed and maintained a Delivery Management platform for real-time logistics and last-mile delivery tracking.',
+      'Built dynamic UI components for delivery dispatch, route management, and driver tracking using JavaScript, jQuery, and frontend frameworks.',
+      'Integrated backend APIs for real-time delivery status updates and operational dashboards.',
+      'Worked on performance optimization, bug fixing, and ensuring cross-browser compatibility.',
+    ],
+  },
+  {
+    company: 'Amber IT Minds',
+    role: 'Web Developer',
+    startDate: 'April 2011',
+    endDate: 'May 2013',
+    location: 'Bangalore, India',
+    description: [
+      'Developed web applications using HTML, CSS, JavaScript, and PHP.',
+      'Created responsive layouts and user-friendly interfaces.',
+      'Fixed bugs, improved UI/UX, and ensured application stability.',
+    ],
+  },
+]
+
+export const services = [
+  {
+    number: '01',
+    title: 'Full Stack Development',
+    description:
+      'End-to-end MERN stack development from architecture blueprint to production deployment, ensuring scalable and high-performance solutions.',
+    icon: 'Code',
+  },
+  {
+    number: '02',
+    title: 'Solution Architecture',
+    description:
+      'Designing scalable, secure enterprise architectures — system design, database modeling, API strategy, and cloud infrastructure.',
+    icon: 'Layers',
+  },
+  {
+    number: '03',
+    title: 'Technical Leadership',
+    description:
+      'Building high-performing engineering teams with strong governance, mentoring, code quality standards, and Agile delivery practices.',
+    icon: 'Users',
+  },
+  {
+    number: '04',
+    title: 'API Strategy & Integration',
+    description:
+      'Architecting RESTful APIs, microservices, and third-party integrations enabling seamless interoperability across enterprise systems.',
+    icon: 'Plug',
+  },
+  {
+    number: '05',
+    title: 'Cloud & DevOps',
+    description:
+      'AWS and Azure cloud architecture, CI/CD pipelines, and cloud-native application development for reliable automated deployments.',
+    icon: 'Cloud',
+  },
+  {
+    number: '06',
+    title: 'Performance Engineering',
+    description:
+      'Implementing optimization strategies delivering up to 90% performance improvements through thoughtful system design and caching.',
+    icon: 'Zap',
+  },
+]
+
+export const projects = [
+  {
+    title: 'Enterprise Logistics Platform',
+    description:
+      'End-to-end MERN stack platform for Niagara Bottling LLC — CSO Portal, Driver Mobile App, and Kiosk Systems for real-time warehouse and yard operations at scale.',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'React Native'],
+    category: 'Enterprise',
+    featured: true,
+    gradient: 'from-cyan-600 to-blue-600',
+  },
+  {
+    title: 'OTT Streaming Platform',
+    description:
+      'Scalable Over-the-Top video streaming platform with HLS/DASH support, CDN integration, microservices architecture, and subscription-based access control.',
+    tags: ['React.js', 'Node.js', 'HLS/DASH', 'CDN', 'Microservices'],
+    category: 'Media',
+    featured: true,
+    gradient: 'from-purple-600 to-pink-500',
+  },
+  {
+    title: 'eCommerce Platform Modernization',
+    description:
+      'Large-scale eCommerce platform redesign delivering significant improvements in user interface, usability, cross-browser compatibility, and performance.',
+    tags: ['React.js', 'Next.js', 'Node.js', 'MongoDB'],
+    category: 'eCommerce',
+    featured: false,
+    gradient: 'from-orange-500 to-yellow-400',
+  },
+]
+
+export const stats = [
+  { label: 'Years Experience', value: '15+' },
+  { label: 'Companies', value: '7+' },
+  { label: 'Performance Gain', value: '90%' },
+  { label: 'Engagement Growth', value: '80%' },
+]
