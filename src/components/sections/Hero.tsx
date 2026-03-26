@@ -118,7 +118,7 @@ export default function Hero() {
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
               </button>
               <a
-                href="/Muthukumar2026-exp.pdf"
+                href={`${import.meta.env.BASE_URL}Muthukumar2026-exp.pdf`}
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 dark:border-grey-dark-200 text-gray-700 dark:text-white/80 font-semibold text-sm hover:border-theme hover:text-theme transition-all duration-300"
               >
@@ -193,7 +193,7 @@ export default function Hero() {
               {/* Image with light sweep */}
               <div className="avatar-light-sweep relative w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden border-2 border-theme/40 shadow-glow">
                 <img
-                  src="/muthu.jpeg"
+                  src={`${import.meta.env.BASE_URL}muthu.jpeg`}
                   alt="Muthukumar U"
                   className="w-full h-full object-cover object-top"
                 />
