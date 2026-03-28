@@ -36,9 +36,9 @@ export default function BigBangIntro({ onDone }: { onDone: () => void }) {
 
   useEffect(() => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    if (!canvas) { onDoneRef.current(); return }
     const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    if (!ctx) { onDoneRef.current(); return }
 
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
@@ -237,7 +237,17 @@ export default function BigBangIntro({ onDone }: { onDone: () => void }) {
     }
 
     animId = requestAnimationFrame(draw)
-    return () => cancelAnimationFrame(animId)
+
+    // Safety fallback: force-finish if animation hangs (e.g. mobile tab backgrounded)
+    const safetyTimer = setTimeout(() => {
+      cancelAnimationFrame(animId)
+      onDoneRef.current()
+    }, 5000)
+
+    return () => {
+      cancelAnimationFrame(animId)
+      clearTimeout(safetyTimer)
+    }
   }, [])
 
   if (phase === 'done') return null
