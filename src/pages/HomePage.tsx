@@ -6,6 +6,7 @@ import Services from '../components/sections/Services'
 import Experience from '../components/sections/Experience'
 import Skills from '../components/sections/Skills'
 import Portfolio from '../components/sections/Portfolio'
+import GitHub from '../components/sections/GitHub'
 import Contact from '../components/sections/Contact'
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Experience />
         <Skills />
         <Portfolio />
+        <GitHub />
         <Contact />
       </main>
       <Footer />

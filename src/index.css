@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode theme colors — darker cyan for readability on white */
+  :root {
+    --color-theme-rgb: 2, 132, 199;       /* #0284c7 */
+    --color-theme-dark-rgb: 3, 105, 161;  /* #0369a1 */
+  }
+
+  /* Dark mode theme colors — bright cyan pops on dark backgrounds */
+  .dark {
+    --color-theme-rgb: 34, 211, 238;      /* #22d3ee */
+    --color-theme-dark-rgb: 8, 145, 178;  /* #0891b2 */
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
@@ -107,10 +119,10 @@
   }
 
   .card-base {
-    @apply bg-white/95 dark:bg-metal/80 backdrop-blur-sm border border-gray-100 dark:border-grey-dark rounded-xl transition-all duration-300;
+    @apply bg-white dark:bg-metal/80 backdrop-blur-sm border border-gray-200 dark:border-grey-dark rounded-xl transition-all duration-300;
   }
 
   .glow-theme {
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+    box-shadow: 0 0 20px rgba(var(--color-theme-rgb), 0.2);
   }
 }

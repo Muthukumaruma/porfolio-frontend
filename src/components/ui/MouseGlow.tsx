@@ -2,6 +2,10 @@ import { useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function MouseGlow() {
+  // No mouse cursor on touch devices — skip entirely
+  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+    return null
+  }
   const mouseX = useMotionValue(-400)
   const mouseY = useMotionValue(-400)
 

@@ -94,6 +94,8 @@ export const skills = [
 export const experiences = [
   {
     company: 'CES IT PVT LTD',
+    domain: null,
+    logo: 'CES Limited Logo.jpg',
     role: 'Lead Software Technologist / Architect',
     startDate: 'April 2025',
     endDate: 'January 2026',
@@ -101,15 +103,17 @@ export const experiences = [
     description: [
       'Delivered End-to-End MERN stack solutions by architecting and building enterprise logistics platforms from scratch.',
       'Managed architecture of enterprise-grade Warehouse Management platforms: CSO Portal, Driver Mobile App, and Kiosk Systems for Niagara Bottling, LLC.',
+      'Built and integrated AI & LLM modules using OpenAI (GPT-4) API — developed intelligent automation, smart query handling, and conversational features within enterprise logistics and warehouse management platforms.',
       'Led solution design and full-stack development ensuring high availability, scalability, and performance.',
       'Drove Agile delivery and engineering governance — sprint planning, code reviews, and release cycles.',
       'Integrated complex third-party ecosystems including Niagara Eye, Voice Bot, and Manhattan WMS.',
       'Mentored engineering teams, fostering a culture of technical excellence and continuous improvement.',
-      'Worked with AI and LLM modules — integrated OpenAI (GPT) and Google Gemini APIs to enable intelligent automation and conversational features within enterprise platforms.',
     ],
   },
   {
     company: 'Airline Pros',
+    domain: 'airlinepros.com',
+    logo: 'AirlinePros-logo.png',
     role: 'Lead Software Engineer / Architect',
     startDate: 'February 2022',
     endDate: 'December 2024',
@@ -125,6 +129,8 @@ export const experiences = [
   },
   {
     company: 'Photon Infotech',
+    domain: 'photoninfotech.com',
+    logo: 'photon-infotech.png',
     role: 'Technical Lead / Architect',
     startDate: 'July 2020',
     endDate: 'February 2022',
@@ -139,6 +145,8 @@ export const experiences = [
   },
   {
     company: 'The Viral Fever',
+    domain: 'theviralfever.com',
+    logo: 'tvf.jpg',
     role: 'Senior Software Engineer / Architect',
     startDate: 'December 2016',
     endDate: 'July 2020',
@@ -154,6 +162,7 @@ export const experiences = [
   },
   {
     company: 'L&T Technology Services',
+    domain: 'ltts.com',
     role: 'Senior Software Engineer',
     startDate: 'May 2015',
     endDate: 'December 2016',
@@ -167,6 +176,8 @@ export const experiences = [
   },
   {
     company: 'DispatchTrack',
+    domain: 'dispatchtrack.com',
+    logo: 'dispatchtrack_logo.png',
     role: 'Web Developer',
     startDate: 'May 2013',
     endDate: 'May 2015',
@@ -180,6 +191,7 @@ export const experiences = [
   },
   {
     company: 'Amber IT Minds',
+    domain: null,
     role: 'Web Developer',
     startDate: 'April 2011',
     endDate: 'May 2013',
@@ -246,6 +258,9 @@ export const projects = [
     category: 'Enterprise',
     featured: true,
     gradient: 'from-cyan-600 to-blue-600',
+    image: 'enterprice.jpg',
+    link: null,
+    linkLabel: 'Private Project',
   },
   {
     title: 'OTT Streaming Platform',
@@ -255,6 +270,33 @@ export const projects = [
     category: 'Media',
     featured: true,
     gradient: 'from-purple-600 to-pink-500',
+    image: 'ott-steming.jpeg',
+    link: null,
+    linkLabel: 'No Longer Available',
+  },
+  {
+    title: 'OTA Travel Booking Platform',
+    description:
+      'Full-scale Online Travel Agent platform built from scratch at Airline Pros — enterprise-grade flight, hotel, and itinerary booking system for travel agents with microservices architecture.',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Microservices', 'NestJS'],
+    category: 'Enterprise',
+    featured: true,
+    gradient: 'from-blue-500 to-indigo-600',
+    image: 'OTA.jpeg',
+    link: 'https://www.flyingcarpet.travel/',
+    linkLabel: 'View Live',
+  },
+  {
+    title: 'DispatchTrack — Delivery Management',
+    description:
+      'Real-time last-mile delivery management platform with dispatch, route management, driver tracking, and operational dashboards for logistics at scale.',
+    tags: ['JavaScript', 'jQuery', 'Node.js', 'REST APIs'],
+    category: 'Enterprise',
+    featured: false,
+    gradient: 'from-green-500 to-teal-600',
+    image: 'dispatchtrack.webp',
+    link: 'https://www.dispatchtrack.com',
+    linkLabel: 'View Live',
   },
   {
     title: 'eCommerce Platform Modernization',
@@ -264,6 +306,9 @@ export const projects = [
     category: 'eCommerce',
     featured: false,
     gradient: 'from-orange-500 to-yellow-400',
+    image: 'e-commerse.jpg',
+    link: 'https://www.samsung.com/us/',
+    linkLabel: 'View Live',
   },
 ]
 

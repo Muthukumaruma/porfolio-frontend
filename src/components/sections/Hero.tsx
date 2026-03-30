@@ -73,11 +73,20 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4"
             >
-              <span className="text-gray-900 dark:text-white">Hi, I'm </span>
+              <span className="text-gray-900 dark:text-white text-3xl md:text-4xl font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>Hi, I'm </span>
               <br />
-              <span className="text-gradient">{profile.firstName}</span>
-              <span className="text-gray-900 dark:text-white">.</span>
+              <span className="text-gradient" style={{ fontFamily: "'Playfair Display', serif" }}>{profile.firstName}</span>
+              <span className="text-gray-900 dark:text-white" style={{ fontFamily: "'Playfair Display', serif" }}>.</span>
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-base md:text-lg font-medium italic text-theme/80 dark:text-theme/70 mb-2"
+            >
+              "Turning ideas into scalable reality."
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -98,7 +107,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-500 dark:text-white/50 text-base leading-relaxed max-w-lg mb-8"
+              className="text-gray-600 dark:text-white/50 text-base leading-relaxed max-w-lg mb-8"
             >
               {profile.bio}
             </motion.p>
@@ -221,7 +230,7 @@ export default function Hero() {
                   className="card-base p-4 text-center"
                 >
                   <p className="text-2xl font-black text-theme">{stat.value}</p>
-                  <p className="text-xs text-gray-500 dark:text-white/40 mt-0.5">{stat.label}</p>
+                  <p className="text-xs text-gray-600 dark:text-white/40 mt-0.5">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

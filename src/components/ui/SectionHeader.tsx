@@ -35,7 +35,7 @@ export default function SectionHeader({
       </h2>
       {subtitle && (
         <p
-          className={`text-gray-500 dark:text-white/50 text-base max-w-2xl leading-relaxed ${
+          className={`text-gray-600 dark:text-white/50 text-base max-w-2xl leading-relaxed ${
             align === 'center' ? 'mx-auto' : ''
           }`}
         >

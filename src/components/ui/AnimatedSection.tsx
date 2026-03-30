@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
 interface Props {
   children: ReactNode
   className?: string
@@ -14,14 +16,16 @@ export default function AnimatedSection({
   delay = 0,
   direction = 'up',
 }: Props) {
-  const initial =
-    direction === 'up'
-      ? { opacity: 0, y: 40 }
-      : direction === 'left'
-      ? { opacity: 0, x: -40 }
-      : direction === 'right'
-      ? { opacity: 0, x: 40 }
-      : { opacity: 0 }
+  // On mobile: only fade (no translate), shorter duration, no delay
+  const initial = isMobile
+    ? { opacity: 0 }
+    : direction === 'up'
+    ? { opacity: 0, y: 40 }
+    : direction === 'left'
+    ? { opacity: 0, x: -40 }
+    : direction === 'right'
+    ? { opacity: 0, x: 40 }
+    : { opacity: 0 }
 
   const animate = { opacity: 1, y: 0, x: 0 }
 
@@ -29,8 +33,8 @@ export default function AnimatedSection({
     <motion.div
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: isMobile ? 0.35 : 0.6, delay: isMobile ? 0 : delay, ease: 'easeOut' }}
       className={className}
     >
       {children}
@@ -42,12 +46,12 @@ export const staggerContainer = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: isMobile ? 0.05 : 0.1,
     },
   },
 }
 
 export const staggerItem = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: isMobile ? 10 : 30 },
+  show: { opacity: 1, y: 0, transition: { duration: isMobile ? 0.3 : 0.5, ease: 'easeOut' } },
 }

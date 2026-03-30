@@ -14,7 +14,7 @@ const personalInfo = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-gray-50/50 dark:bg-white/[0.02]">
+    <section id="about" className="section-padding bg-gray-50 dark:bg-white/[0.02]">
       <div className="container-max">
         <SectionHeader
           badge="About Me"
@@ -49,7 +49,7 @@ export default function About() {
                         <Icon size={14} className="text-theme" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-400 dark:text-white/30 mb-0.5">{label}</p>
+                        <p className="text-xs text-gray-500 dark:text-white/30 mb-0.5">{label}</p>
                         {href ? (
                           <a
                             href={href}
@@ -88,7 +88,7 @@ export default function About() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 dark:text-white text-sm">{edu.degree}</p>
-                        <p className="text-xs text-gray-500 dark:text-white/40 mt-0.5">{edu.institution}</p>
+                        <p className="text-xs text-gray-600 dark:text-white/40 mt-0.5">{edu.institution}</p>
                         <p className="text-xs text-theme mt-1 font-medium">{edu.year}</p>
                       </div>
                     </div>
