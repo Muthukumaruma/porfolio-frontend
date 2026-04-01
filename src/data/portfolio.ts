@@ -251,6 +251,18 @@ export const services = [
 
 export const projects = [
   {
+    title: 'CodeSense AI — Code Review Platform',
+    description:
+      'Full-stack SaaS platform that unifies GitHub, GitLab, Bitbucket, and Azure DevOps repositories and delivers AI-powered code reviews covering security vulnerabilities, performance bottlenecks, and engineering best practices.',
+    tags: ['React.js', 'Node.js', 'Express.js', 'OAuth 2.0', 'AI/LLM', 'REST APIs'],
+    category: 'AI Tools',
+    featured: true,
+    gradient: 'from-violet-600 to-cyan-500',
+    image: null,
+    link: 'https://codesense.online',
+    linkLabel: 'View Live',
+  },
+  {
     title: 'Enterprise Logistics Platform',
     description:
       'End-to-end MERN stack platform for Niagara Bottling LLC — CSO Portal, Driver Mobile App, and Kiosk Systems for real-time warehouse and yard operations at scale.',

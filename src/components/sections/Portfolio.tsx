@@ -4,7 +4,7 @@ import { ExternalLink, Tag, ChevronLeft, ChevronRight, Lock, WifiOff } from 'luc
 import SectionHeader from '../ui/SectionHeader'
 import { projects } from '../../data/portfolio'
 
-const filters = ['All', 'Featured', 'Enterprise', 'Media', 'eCommerce']
+const filters = ['All', 'Featured', 'AI Tools', 'Enterprise', 'Media', 'eCommerce']
 
 export default function Portfolio() {
   const [active, setActive] = useState('All')
