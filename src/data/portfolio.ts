@@ -259,7 +259,7 @@ export const projects = [
     featured: true,
     gradient: 'from-violet-600 to-cyan-500',
     image: null,
-    link: 'https://codesense.online',
+    link: 'https://dev.codesense.online',
     linkLabel: 'View Live',
   },
   {
