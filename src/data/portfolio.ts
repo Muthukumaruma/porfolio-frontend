@@ -258,7 +258,7 @@ export const projects = [
     category: 'AI Tools',
     featured: true,
     gradient: 'from-violet-600 to-cyan-500',
-    image: null,
+    image: 'codeSenseBanner.png',
     link: 'https://dev.codesense.online',
     linkLabel: 'View Live',
     archDiagram: 'codeSenseArch.png',
