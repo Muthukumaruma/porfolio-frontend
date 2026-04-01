@@ -261,6 +261,7 @@ export const projects = [
     image: null,
     link: 'https://dev.codesense.online',
     linkLabel: 'View Live',
+    archDiagram: 'codeSenseArch.png',
   },
   {
     title: 'Enterprise Logistics Platform',

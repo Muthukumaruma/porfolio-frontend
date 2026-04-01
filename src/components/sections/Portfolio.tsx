@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ExternalLink, Tag, ChevronLeft, ChevronRight, Lock, WifiOff } from 'lucide-react'
+import { ExternalLink, Tag, ChevronLeft, ChevronRight, Lock, WifiOff, X, LayoutTemplate } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeader from '../ui/SectionHeader'
 import { projects } from '../../data/portfolio'
 
@@ -8,6 +9,7 @@ const filters = ['All', 'Featured', 'AI Tools', 'Enterprise', 'Media', 'eCommerc
 
 export default function Portfolio() {
   const [active, setActive] = useState('All')
+  const [archModal, setArchModal] = useState<string | null>(null)
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'start',
@@ -100,7 +102,7 @@ export default function Portfolio() {
                             {project.featured ? '★ Featured' : project.category}
                           </span>
                         </div>
-                        <div className="absolute inset-0 bg-night/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-night/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
                           {project.link ? (
                             <a
                               href={project.link}
@@ -122,6 +124,15 @@ export default function Portfolio() {
                               <WifiOff size={12} />
                               No Longer Available
                             </span>
+                          )}
+                          {'archDiagram' in project && project.archDiagram && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); setArchModal(project.archDiagram as string) }}
+                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
+                            >
+                              <LayoutTemplate size={12} />
+                              Architecture
+                            </button>
                           )}
                         </div>
                       </div>
@@ -183,6 +194,46 @@ export default function Portfolio() {
           </div>
         )}
       </div>
+
+      {/* Architecture Diagram Modal */}
+      <AnimatePresence>
+        {archModal && (
+          <motion.div
+            className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setArchModal(null)}
+          >
+            <motion.div
+              className="relative max-w-5xl w-full"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setArchModal(null)}
+                className="absolute -top-4 -right-4 z-10 w-9 h-9 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-white hover:border-theme hover:text-theme transition-all"
+              >
+                <X size={16} />
+              </button>
+              <div className="rounded-2xl overflow-hidden border border-gray-700 shadow-2xl">
+                <div className="bg-gray-900 px-5 py-3 flex items-center gap-2 border-b border-gray-700">
+                  <LayoutTemplate size={15} className="text-theme" />
+                  <span className="text-white text-sm font-semibold">CodeSense AI — Architecture Diagram</span>
+                </div>
+                <img
+                  src={`${import.meta.env.BASE_URL}${archModal}`}
+                  alt="Architecture Diagram"
+                  className="w-full object-contain bg-gray-950 max-h-[75vh]"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
