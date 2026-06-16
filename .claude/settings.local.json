@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:minfo-nextjs.netlify.app)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(wrangler --version)",
+      "Bash(wrangler deploy:*)",
+      "Bash(curl -s -X POST https://portfolio-ai-worker.muthukumar-mscit.workers.dev/chat -H \"Content-Type: application/json\" -H \"Origin: https://muthukumar.win\" -d '{\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"Hello\"\"}]}')",
+      "Bash(wrangler secret:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\muthu\\projects\\AI-Code-Reviewer-BE\\src\\services",
+      "C:\\muthu\\projects\\AI-Code-Reviewer-BE\\src\\controllers",
+      "C:\\muthu\\projects\\AI-Code-Reviewer-BE\\src\\routes",
+      "C:\\muthu\\projects\\AI-Code-Reviewer-FE\\src\\services",
+      "C:\\muthu\\projects\\AI-Code-Reviewer-FE\\src\\pages",
+      "C:\\muthu\\projects\\AI-Code-Reviewer-BE"
+    ]
+  }
+}
