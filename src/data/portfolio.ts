@@ -312,6 +312,18 @@ export const projects = [
     linkLabel: 'View Live',
   },
   {
+    title: 'Jothisham.com — Astrology Platform',
+    description:
+      'Full-stack astrology platform with a web application and mobile app offering personalized horoscope readings, birth chart analysis, and astrology consultations — built with MERN stack and React Native.',
+    tags: ['React.js', 'React Native', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
+    category: 'Web Platform',
+    featured: true,
+    gradient: 'from-amber-500 to-orange-600',
+    image: 'https://pub-fe5dcbb57373487492cd7c3afc9c013d.r2.dev/cms/books/530c82b7-b026-4e15-b7f8-000fe95b2b8d.webp',
+    link: 'https://www.jothisham.com',
+    linkLabel: 'View Live',
+  },
+  {
     title: 'eCommerce Platform Modernization',
     description:
       'Large-scale eCommerce platform redesign delivering significant improvements in user interface, usability, cross-browser compatibility, and performance.',

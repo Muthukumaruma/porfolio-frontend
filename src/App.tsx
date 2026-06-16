@@ -4,7 +4,6 @@ import { ThemeProvider } from './context/ThemeContext'
 import HomePage from './pages/HomePage'
 import MouseGlow from './components/ui/MouseGlow'
 import GalaxyBackground from './components/ui/GalaxyBackground'
-import AiChat from './components/ui/AiChat'
 import BigBangIntro from './components/ui/BigBangIntro'
 
 export default function App() {
@@ -24,7 +23,6 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
-      <AiChat />
     </ThemeProvider>
   )
 }
