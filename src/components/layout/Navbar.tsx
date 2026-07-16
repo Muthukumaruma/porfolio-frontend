@@ -60,11 +60,18 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => scrollTo('#home')}
-            className="text-xl font-bold tracking-tight"
+            className="flex items-center gap-2 text-xl font-bold tracking-tight"
           >
-            <span className="text-theme">M</span>
-            <span className="text-gray-900 dark:text-white">uthukumar</span>
-            <span className="text-theme">.</span>
+            <img
+              src={`${import.meta.env.BASE_URL}MuthuLogo.png`}
+              alt="Muthukumar U logo"
+              className="h-9 w-9 object-contain"
+            />
+            <span>
+              <span className="text-theme">M</span>
+              <span className="text-gray-900 dark:text-white">uthukumar</span>
+              <span className="text-theme">.</span>
+            </span>
           </button>
 
           {/* Desktop Nav */}

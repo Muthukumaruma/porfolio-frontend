@@ -45,14 +45,71 @@ export default function GalaxyBackground() {
     let shooters: ShootingStar[] = []
     let lastShoot = 0
     let lastFrame = 0
-    // Offscreen canvas for nebula (drawn once, reused every frame)
+    let galaxyAngle = 0
+    // Offscreen canvases (drawn once, reused every frame)
     let nebulaCanvas: HTMLCanvasElement | null = null
+    let galaxyTexture: HTMLCanvasElement | null = null
+    let galaxySize = 0
+    let galaxyCx = 0
+    let galaxyCy = 0
 
     const resize = () => {
       // Canvas is position:fixed — only needs to cover the viewport
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
       nebulaCanvas = null // rebuild nebula on resize
+      galaxyTexture = null // rebuild galaxy texture on resize
+    }
+
+    const buildGalaxyTexture = () => {
+      const mobile = isMobile()
+      const size = Math.round(Math.max(canvas.width, canvas.height) * (mobile ? 0.4 : 0.55))
+      const tex = document.createElement('canvas')
+      tex.width = size
+      tex.height = size
+      const tctx = tex.getContext('2d')!
+      const cx = size / 2
+      const cy = size / 2
+
+      // Bright core glow
+      const core = tctx.createRadialGradient(cx, cy, 0, cx, cy, size * 0.14)
+      core.addColorStop(0, 'rgba(224,247,255,0.55)')
+      core.addColorStop(0.35, 'rgba(125,211,252,0.26)')
+      core.addColorStop(1, 'rgba(125,211,252,0)')
+      tctx.fillStyle = core
+      tctx.beginPath()
+      tctx.arc(cx, cy, size * 0.14, 0, Math.PI * 2)
+      tctx.fill()
+
+      // Spiral arms — dust/star clumps along logarithmic spirals, squished for a tilted-disk look
+      const arms = 2
+      const turns = 2.1
+      const pointsPerArm = mobile ? 90 : 160
+      const armColors = ['180,230,255', '34,211,238', '165,180,255']
+      for (let a = 0; a < arms; a++) {
+        const armOffset = (a / arms) * Math.PI * 2
+        for (let i = 0; i < pointsPerArm; i++) {
+          const t = i / pointsPerArm
+          const angle = armOffset + t * turns * Math.PI * 2
+          const radius = t * size * 0.46
+          const jitter = (Math.random() - 0.5) * size * 0.03
+          const x = cx + Math.cos(angle) * radius + jitter
+          const y = cy + Math.sin(angle) * radius * 0.5 + jitter * 0.5
+          const alpha = (1 - t) * 0.16 * (0.6 + Math.random() * 0.4)
+          const r = (1.5 + Math.random() * 2.5) * (mobile ? 4 : 6)
+          const color = armColors[Math.floor(Math.random() * armColors.length)]
+          const grad = tctx.createRadialGradient(x, y, 0, x, y, r)
+          grad.addColorStop(0, `rgba(${color},${alpha})`)
+          grad.addColorStop(1, `rgba(${color},0)`)
+          tctx.fillStyle = grad
+          tctx.beginPath()
+          tctx.arc(x, y, r, 0, Math.PI * 2)
+          tctx.fill()
+        }
+      }
+
+      galaxySize = size
+      return tex
     }
 
     const buildStars = () => {
@@ -137,6 +194,20 @@ export default function GalaxyBackground() {
       // Nebula — drawn to offscreen canvas once, then blitted
       if (!nebulaCanvas) nebulaCanvas = buildNebulaCanvas()
       ctx.drawImage(nebulaCanvas, 0, 0)
+
+      // Distant spiral galaxy — pre-rendered texture, rotated live for a slow drifting swirl
+      if (!galaxyTexture) {
+        galaxyTexture = buildGalaxyTexture()
+        galaxyCx = canvas.width * (mobile ? 0.82 : 0.88)
+        galaxyCy = canvas.height * (mobile ? 0.1 : 0.1)
+      }
+      galaxyAngle += mobile ? 0.00006 : 0.00009
+      ctx.save()
+      ctx.translate(galaxyCx, galaxyCy)
+      ctx.rotate(galaxyAngle)
+      ctx.globalAlpha = mobile ? 0.7 : 0.85
+      ctx.drawImage(galaxyTexture, -galaxySize / 2, -galaxySize / 2)
+      ctx.restore()
 
       // Twinkling stars
       const twinkleStep = mobile ? 0.006 : 0.004

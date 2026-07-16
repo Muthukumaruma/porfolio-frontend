@@ -1,7 +1,31 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Mail, Linkedin, Phone, Download, ArrowRight, ChevronDown } from 'lucide-react'
+import { motion, animate } from 'framer-motion'
+import { Mail, Linkedin, Phone, Download, ArrowRight, ChevronDown, FolderGit2, Github } from 'lucide-react'
 import { profile, stats } from '../../data/portfolio'
+
+function AnimatedStat({ value, delay = 0 }: { value: string; delay?: number }) {
+  const match = value.match(/^(\d+)(.*)$/)
+  const target = match ? parseInt(match[1], 10) : 0
+  const suffix = match ? match[2] : value
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    const controls = animate(0, target, {
+      duration: 1.4,
+      delay,
+      ease: 'easeOut',
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    })
+    return () => controls.stop()
+  }, [target, delay])
+
+  return (
+    <span>
+      {display}
+      {suffix}
+    </span>
+  )
+}
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -39,19 +63,6 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-white/0 dark:bg-transparent pt-16"
     >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.025] dark:opacity-[0.035]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(34,211,238,1) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,1) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center py-16">
           {/* Left Content */}
@@ -61,10 +72,10 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-theme/10 border border-theme/20 text-theme text-sm font-medium mb-6">
+              {/* <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-theme/10 border border-theme/20 text-theme text-sm font-medium mb-6">
                 <span className="w-2 h-2 rounded-full bg-theme animate-pulse" />
                 Available for new opportunities
-              </span>
+              </span> */}
             </motion.div>
 
             <motion.h1
@@ -133,6 +144,22 @@ export default function Hero() {
               >
                 <Download size={16} />
                 Download CV
+              </a>
+              <button
+                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 dark:border-grey-dark-200 text-gray-700 dark:text-white/80 font-semibold text-sm hover:border-theme hover:text-theme transition-all duration-300"
+              >
+                <FolderGit2 size={16} />
+                View Projects
+              </button>
+              <a
+                href={`https://github.com/${profile.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 dark:border-grey-dark-200 text-gray-700 dark:text-white/80 font-semibold text-sm hover:border-theme hover:text-theme transition-all duration-300"
+              >
+                <Github size={16} />
+                GitHub
               </a>
             </motion.div>
 
@@ -229,7 +256,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                   className="card-base p-4 text-center"
                 >
-                  <p className="text-2xl font-black text-theme">{stat.value}</p>
+                  <p className="text-2xl font-black text-theme"><AnimatedStat value={stat.value} delay={0.4 + i * 0.1} /></p>
                   <p className="text-xs text-gray-600 dark:text-white/40 mt-0.5">{stat.label}</p>
                 </motion.div>
               ))}

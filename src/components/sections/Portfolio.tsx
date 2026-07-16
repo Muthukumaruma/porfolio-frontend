@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ExternalLink, Tag, ChevronLeft, ChevronRight, Lock, WifiOff, X, LayoutTemplate } from 'lucide-react'
+import { ExternalLink, Tag, ChevronLeft, ChevronRight, Lock, WifiOff, X, LayoutTemplate, Github, FileText, Briefcase, Smartphone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeader from '../ui/SectionHeader'
 import { projects } from '../../data/portfolio'
@@ -102,30 +102,8 @@ export default function Portfolio() {
                             {project.featured ? '★ Featured' : project.category}
                           </span>
                         </div>
-                        <div className="absolute inset-0 bg-night/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
-                          {project.link ? (
-                            <a
-                              href={project.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-theme text-night text-xs font-semibold hover:bg-theme-dark transition-colors"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <ExternalLink size={12} />
-                              {project.linkLabel}
-                            </a>
-                          ) : project.linkLabel === 'Private Project' ? (
-                            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-700/80 text-white/80 text-xs font-semibold">
-                              <Lock size={12} />
-                              Private Project
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-700/80 text-white/80 text-xs font-semibold">
-                              <WifiOff size={12} />
-                              No Longer Available
-                            </span>
-                          )}
-                          {'archDiagram' in project && project.archDiagram && (
+                        {'archDiagram' in project && project.archDiagram && (
+                          <div className="absolute inset-0 bg-night/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <button
                               onClick={(e) => { e.stopPropagation(); setArchModal(project.archDiagram as string) }}
                               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
@@ -133,29 +111,97 @@ export default function Portfolio() {
                               <LayoutTemplate size={12} />
                               Architecture
                             </button>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
 
                       {/* Content */}
                       <div className="p-5">
-                        <h3 className="font-bold text-gray-900 dark:text-white text-base mb-2 group-hover:text-theme transition-colors duration-300">
+                        <h3 className="font-bold text-gray-900 dark:text-white text-base mb-3 group-hover:text-theme transition-colors duration-300">
                           {project.title}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-white/40 leading-relaxed mb-4">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gray-100 dark:bg-grey-dark text-gray-600 dark:text-white/50 text-xs"
-                            >
-                              <Tag size={9} />
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+
+                        <ul className="space-y-1.5 mb-4">
+                          {'role' in project && project.role && (
+                            <li className="flex items-start gap-2 text-sm text-gray-700 dark:text-white/70 font-medium">
+                              <Briefcase size={13} className="text-theme mt-0.5 shrink-0" />
+                              {project.role}
+                            </li>
+                          )}
+                          <li className="flex items-start gap-2 text-sm text-gray-600 dark:text-white/40 leading-relaxed">
+                            <Tag size={13} className="text-theme mt-0.5 shrink-0" />
+                            {project.description}
+                          </li>
+                          <li className="flex items-start gap-2 text-sm text-gray-600 dark:text-white/40">
+                            <Tag size={13} className="text-theme mt-0.5 shrink-0" />
+                            {project.tags.join(' + ')}
+                          </li>
+                        </ul>
+
+                        <ul className="space-y-1.5 border-t border-gray-100 dark:border-grey-dark-200 pt-3">
+                          {project.link ? (
+                            <li>
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-white/70 hover:text-theme transition-colors"
+                              >
+                                <ExternalLink size={13} />
+                                {project.linkLabel}
+                              </a>
+                            </li>
+                          ) : project.linkLabel === 'Private Project' ? (
+                            <li className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 dark:text-white/30">
+                              <Lock size={13} />
+                              Private Project
+                            </li>
+                          ) : (
+                            <li className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 dark:text-white/30">
+                              <WifiOff size={13} />
+                              No Longer Available
+                            </li>
+                          )}
+                          {'playStore' in project && project.playStore && (
+                            <li>
+                              <a
+                                href={project.playStore as string}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-white/70 hover:text-theme transition-colors"
+                              >
+                                <Smartphone size={13} />
+                                Play Store
+                              </a>
+                            </li>
+                          )}
+                          {'github' in project && project.github && (
+                            <li>
+                              <a
+                                href={project.github as string}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-white/70 hover:text-theme transition-colors"
+                              >
+                                <Github size={13} />
+                                GitHub
+                              </a>
+                            </li>
+                          )}
+                          {'caseStudy' in project && project.caseStudy && (
+                            <li>
+                              <a
+                                href={project.caseStudy as string}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-white/70 hover:text-theme transition-colors"
+                              >
+                                <FileText size={13} />
+                                Case Study
+                              </a>
+                            </li>
+                          )}
+                        </ul>
                       </div>
                     </div>
                   </div>

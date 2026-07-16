@@ -12,6 +12,7 @@ export const profile = {
   email: 'muthukumar.mscit@gmail.com',
   phone: '+91-8072523915',
   linkedin: 'https://www.linkedin.com/in/muthukumaru',
+  github: 'Muthukumaruma',
   address: 'Madurai, Tamil Nadu, India',
   dob: '30th July 1988',
   languages: ['English', 'Tamil', 'Kannada'],
@@ -251,7 +252,39 @@ export const services = [
 
 export const projects = [
   {
+    title: 'Jothisham.com — Astrology Platform',
+    role: 'Founder & Developer',
+    description:
+      'Full-stack astrology platform with a web application and mobile app offering personalized horoscope readings, birth chart analysis, and astrology consultations — built with MERN stack and React Native.',
+    tags: ['React.js', 'React Native', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
+    category: 'Web Platform',
+    featured: true,
+    gradient: 'from-amber-500 to-orange-600',
+    image: 'https://pub-fe5dcbb57373487492cd7c3afc9c013d.r2.dev/cms/books/530c82b7-b026-4e15-b7f8-000fe95b2b8d.webp',
+    link: 'https://www.jothisham.com',
+    linkLabel: 'Live Demo',
+    playStore: 'https://play.google.com/store/apps/details?id=com.jothisham',
+    github: null,
+    caseStudy: null,
+  },
+  {
+    title: 'TechYenthra LegalDesk',
+    role: 'Founder & Architect',
+    description:
+      'AI-powered legal technology platform for document generation, legal workflow automation, case management, digital signatures, and intelligent legal assistance. Designed and developed the complete platform from architecture to deployment.',
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'JWT Authentication', 'REST APIs', 'Docker', 'Nginx', 'Azure / Cloud Hosting'],
+    category: 'AI Tools',
+    featured: true,
+    gradient: 'from-emerald-600 to-teal-500',
+    image: 'tylegal.png',
+    link: 'https://legal.techyenthra.com/',
+    linkLabel: 'Live Demo',
+    github: null,
+    caseStudy: null,
+  },
+  {
     title: 'CodeSense AI — Code Review Platform',
+    role: 'Founder & Architect',
     description:
       'Full-stack SaaS platform that unifies GitHub, GitLab, Bitbucket, and Azure DevOps repositories and delivers AI-powered code reviews covering security vulnerabilities, performance bottlenecks, and engineering best practices.',
     tags: ['React.js', 'Node.js', 'Express.js', 'OAuth 2.0', 'AI/LLM', 'REST APIs'],
@@ -260,11 +293,14 @@ export const projects = [
     gradient: 'from-violet-600 to-cyan-500',
     image: 'codeSenseBanner.png',
     link: 'https://dev.codesense.online',
-    linkLabel: 'View Live',
+    linkLabel: 'Live Demo',
     archDiagram: 'codeSenseArch.png',
+    github: null,
+    caseStudy: null,
   },
   {
     title: 'Enterprise Logistics Platform',
+    role: 'Lead Software Technologist / Architect',
     description:
       'End-to-end MERN stack platform for Niagara Bottling LLC — CSO Portal, Driver Mobile App, and Kiosk Systems for real-time warehouse and yard operations at scale.',
     tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'React Native'],
@@ -274,9 +310,12 @@ export const projects = [
     image: 'enterprice.jpg',
     link: null,
     linkLabel: 'Private Project',
+    github: null,
+    caseStudy: null,
   },
   {
     title: 'OTT Streaming Platform',
+    role: 'Senior Software Engineer / Architect',
     description:
       'Scalable Over-the-Top video streaming platform with HLS/DASH support, CDN integration, microservices architecture, and subscription-based access control.',
     tags: ['React.js', 'Node.js', 'HLS/DASH', 'CDN', 'Microservices'],
@@ -286,9 +325,12 @@ export const projects = [
     image: 'ott-steming.jpeg',
     link: null,
     linkLabel: 'No Longer Available',
+    github: null,
+    caseStudy: null,
   },
   {
     title: 'OTA Travel Booking Platform',
+    role: 'Lead Software Engineer / Architect',
     description:
       'Full-scale Online Travel Agent platform built from scratch at Airline Pros — enterprise-grade flight, hotel, and itinerary booking system for travel agents with microservices architecture.',
     tags: ['React.js', 'Node.js', 'MongoDB', 'Microservices', 'NestJS'],
@@ -297,10 +339,13 @@ export const projects = [
     gradient: 'from-blue-500 to-indigo-600',
     image: 'OTA.jpeg',
     link: 'https://www.flyingcarpet.travel/',
-    linkLabel: 'View Live',
+    linkLabel: 'Live Demo',
+    github: null,
+    caseStudy: null,
   },
   {
     title: 'DispatchTrack — Delivery Management',
+    role: 'Web Developer',
     description:
       'Real-time last-mile delivery management platform with dispatch, route management, driver tracking, and operational dashboards for logistics at scale.',
     tags: ['JavaScript', 'jQuery', 'Node.js', 'REST APIs'],
@@ -309,22 +354,13 @@ export const projects = [
     gradient: 'from-green-500 to-teal-600',
     image: 'dispatchtrack.webp',
     link: 'https://www.dispatchtrack.com',
-    linkLabel: 'View Live',
-  },
-  {
-    title: 'Jothisham.com — Astrology Platform',
-    description:
-      'Full-stack astrology platform with a web application and mobile app offering personalized horoscope readings, birth chart analysis, and astrology consultations — built with MERN stack and React Native.',
-    tags: ['React.js', 'React Native', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
-    category: 'Web Platform',
-    featured: true,
-    gradient: 'from-amber-500 to-orange-600',
-    image: 'https://pub-fe5dcbb57373487492cd7c3afc9c013d.r2.dev/cms/books/530c82b7-b026-4e15-b7f8-000fe95b2b8d.webp',
-    link: 'https://www.jothisham.com',
-    linkLabel: 'View Live',
+    linkLabel: 'Live Demo',
+    github: null,
+    caseStudy: null,
   },
   {
     title: 'eCommerce Platform Modernization',
+    role: 'Technical Lead / Architect',
     description:
       'Large-scale eCommerce platform redesign delivering significant improvements in user interface, usability, cross-browser compatibility, and performance.',
     tags: ['React.js', 'Next.js', 'Node.js', 'MongoDB'],
@@ -333,7 +369,9 @@ export const projects = [
     gradient: 'from-orange-500 to-yellow-400',
     image: 'e-commerse.jpg',
     link: 'https://www.samsung.com/us/',
-    linkLabel: 'View Live',
+    linkLabel: 'Live Demo',
+    github: null,
+    caseStudy: null,
   },
 ]
 
