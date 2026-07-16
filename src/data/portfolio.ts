@@ -268,6 +268,21 @@ export const projects = [
     caseStudy: null,
   },
   {
+    title: 'TechYenthra Technologies',
+    role: 'Founder',
+    description:
+      'Technology company building modern web platforms and digital products — designed and developed the corporate website and product ecosystem with a focus on clean UI, smooth interactions, and scalable frontend architecture.',
+    tags: ['React', 'Node.js', 'MongoDB', 'CSS3', 'CSS3 Animations'],
+    category: 'Web Platform',
+    featured: true,
+    gradient: 'from-blue-700 to-indigo-500',
+    image: 'techyenthraLogo.png',
+    link: 'https://www.techyenthra.com/',
+    linkLabel: 'Live Demo',
+    github: null,
+    caseStudy: null,
+  },
+  {
     title: 'TechYenthra LegalDesk',
     role: 'Founder & Architect',
     description:
