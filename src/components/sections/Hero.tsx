@@ -229,8 +229,8 @@ export default function Hero() {
               {/* Image with light sweep */}
               <div className="avatar-light-sweep relative w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden border-2 border-theme/40 shadow-glow">
                 <img
-                  src={`${import.meta.env.BASE_URL}muthu.jpeg`}
-                  alt="Muthukumar U"
+                  src={`${import.meta.env.BASE_URL}muthu.webp`}
+                  alt="Muthukumar Udaiyappan"
                   className="w-full h-full object-cover object-top"
                 />
                 {/* Bottom gradient */}
